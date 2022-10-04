@@ -14,10 +14,13 @@
 
 ## How does it work ?
 
-After pulling the module, you can run some commands below
+    After downloading the server, you can run the file "server.exe" and run the commands below.
+    
 
 ### Command List:
 - start [port]?
 - stop
 - reset
 - restart [port]?
+- list users
+
