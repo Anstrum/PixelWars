@@ -1,0 +1,17 @@
+{
+    "name": "multiplayer_pixel_game",
+    "version": "0.0.1",
+    "description": "This is a classic game made with pixel.",
+    "main": "src/index.js",
+    "type": "module",
+    "author": "Nanaka",
+    "license": "open",
+    "scripts": {
+        "start": "node ./src/index.js",
+        "test": "node ./src/test.js"
+    },
+    "dependencies": {
+        "jest": "^29.1.2",
+        "socket.io": "^4.5.2"
+    }
+}
