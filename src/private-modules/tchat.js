@@ -1,88 +1,41 @@
-import {WebSocketServer} from "ws";
-
+import { WebSocketServer } from "ws";
 
 //#region Public funcs
 let server = {
-    port: null,
-    sockets: [],
+	port: null,
+	clients: [],
 }
-
 
 export const Init = (_port) => {
-    server.port = _port;
-    server.ws = new WebSocketServer({port:_port});
+	server.port = _port;
+	server.ws = new WebSocketServer({ port: _port });
+	server.clients = []
 }
-
 
 export const Close = () => {
-    server.port = null
-    sockets = []
+	server.port = null
+	server.clients = []
 }
-
 
 export const Start = () => {
-    server.ws.on("connection", (client) => {
-      console.log("test")
+	server.ws.on("connection", (client) => {
+		console.log("new client registered")
+		server.clients.push(client)
 
-      client.on("message", (data) => {
-        const packet = JSON.parse(data);
-    
-        switch (packet.type) {
-          case "hello from client":
-            console.log("wesh ça march")
-            break;
-        }
-      });
-    })
+		client.on("message", (data) => {
+			const packet = JSON.parse(data);
+
+			switch (packet.type) {
+				case "dis coucou a tout le monde":
+					data = JSON.stringify({
+						type: "coucou",
+						content: ["coucou", "coucou"]
+					});
+					server.clients.forEach(client => {
+						client.send(data)
+					});
+				break;
+			}
+		});
+	})
 }
-
-/*
-SERVER
-import { WebSocketServer } from "ws";
-
-const server = new WebSocketServer({ port: 3000 });
-
-server.on("connection", (socket) => {
-  // send a message to the client
-  socket.send(JSON.stringify({
-    type: "hello from server",
-    content: [ 1, "2" ]
-  }));
-
-  // receive a message from the client
-  socket.on("message", (data) => {
-    const packet = JSON.parse(data);
-
-    switch (packet.type) {
-      case "hello from client":
-        // ...
-        break;
-    }
-  });
-});
-*/
-
-
-/*
-CLIENT
-const socket = new WebSocket("ws://localhost:3000");
-
-socket.addEventListener("open", () => {
-  // send a message to the server
-  socket.send(JSON.stringify({
-    type: "hello from client",
-    content: [ 3, "4" ]
-  }));
-});
-
-// receive a message from the server
-socket.addEventListener("message", ({ data }) => {
-  const packet = JSON.parse(data);
-
-  switch (packet.type) {
-    case "hello from server":
-      // ...
-      break;
-  }
-});
-*/
