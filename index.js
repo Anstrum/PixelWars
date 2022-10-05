@@ -11,8 +11,6 @@ tchat.Init(8888)
 
 tchat.Start()
 
-
-
 const app = express();
 app.use(express.static(__dirname + "/src/public"))
 

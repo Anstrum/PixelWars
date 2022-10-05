@@ -22,7 +22,17 @@ export const Close = () => {
 
 export const Start = () => {
     server.ws.on("connection", (client) => {
-        client.sendFile("./src/public/index.html")
+      console.log("test")
+
+      client.on("message", (data) => {
+        const packet = JSON.parse(data);
+    
+        switch (packet.type) {
+          case "hello from client":
+            console.log("wesh ça march")
+            break;
+        }
+      });
     })
 }
 
