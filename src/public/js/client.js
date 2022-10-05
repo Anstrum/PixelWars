@@ -1,4 +1,3 @@
-// import { WebSocket } from "../../../node_modules/ws"
 const socket = new WebSocket("ws://localhost:8888");
 
 socket.addEventListener("open", () => {

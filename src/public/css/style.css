@@ -1,10 +1,6 @@
 :root {
-    --title-color: blue;
-    --title-font: 'Courier New', Courier, monospace;
-
-    --main-background-color: #180600;
-
-    --classic-section-border-color: blue;
+    --main-background-color: #03001d;
+    --main-background-color-secondary: #04002c;
 }
 
 *{
@@ -30,106 +26,45 @@ h1, h2, h3, h4, h5 {
     font-family: var(--title-font);
 }
 
-/*#region COMMON DESIGN */
-
-v-separator-1 {
-    height: 1%;
+.auth-form {
+    position:fixed;
+    left: calc(50% - 125px);
+    top: calc(30% - 200px);
+    width: 250px;
+    height: 400px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: auto;
+    background-color: var(--main-background-color-secondary);
+    color: rgb(255, 255, 255);
+    transition:box-shadow 0.2s;
 }
-v-separator-5 {
-    height: 5%;
+.auth-form:hover {
+    box-shadow: 0 0 15px black;
+    transition:box-shadow 0.2s;
 }
-v-separator-10 {
-    height: 10%;
+.auth-form h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
 }
-v-separator-25 {
-    height: 25%;
+.auth-form div {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
 }
-
-h-separator-1 {
-    width: 1%;
-}
-h-separator-5 {
-    width: 5%;
-}
-h-separator-10 {
-    width: 10%;
-}
-h-separator-25 {
-    width: 25%;
-}
-
-
-.classic-section {
-    background-color: black;
-    color:white;
-    border: 3px solid var(--classic-section-border-color);
-    border-radius: 5px;
-    padding: 5px
-}
-
-.classic-title {
-    color: var(--title-color);
+.auth-form div h3 {
+    margin: 20px 0 10px 0;
     width: 100%;
     text-align: center;
 }
 
-.h-section-container {
-    width: 98%;
-    margin: 1%, 0;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.floating-left-section {
-    position: fixed;
-    left: 0;
-    background-color: black;
-}
-
-/* #endregion */
-
-/* #region HEADER */
-
-header {
-    width: 85%;
-    height: fit-content;
-    margin-bottom:3%;
-    display:flex;
-    justify-content: space-between;
-    background-color: black;
-    border: 3px solid blue;
-    border-radius: 0px 0px 5px 5px;
-    border-top:none;
-}
-header h1 {
-    width: fit-content;
-    color:var(--title-color);
-    margin-left: 10px;
-}
-
-header h4 {
-    color:gray;
-}
-.general-informations-container {
+.auth-form div input {
     width: 80%;
-    height: 100%;
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: rgb(3, 3, 3);
+    padding: 5px;
 }
-
-/* #endregion */
-
-/* #region PLAYER LIST */
-
-.player-list-container {
-    width: 15%;
-    top:10%;
-    height: 80%;
-    border: 3px solid var(--classic-section-border-color);
-    border-left: none;
-    border-radius: 0 5px 5px 0;
-}
-
-/* #endregion */
