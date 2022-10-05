@@ -23,19 +23,24 @@ export const Start = () => {
 		server.clients.push(client)
 
 		client.on("message", (data) => {
-			const packet = JSON.parse(data);
-
-			switch (packet.type) {
-				case "dis coucou a tout le monde":
-					data = JSON.stringify({
-						type: "coucou",
-						content: ["coucou", "coucou"]
-					});
-					server.clients.forEach(client => {
-						client.send(data)
-					});
-				break;
-			}
+			messageReceived(data, client)
 		});
 	})
+}
+
+const messageReceived = (data, client) => {
+	const packet = JSON.parse(data);
+
+	switch (packet.type) {
+		case "get-client-list":
+			client.send(JSON.stringify( {
+				type: "send-client-list",
+				content: ["user1", "user2", "user3"]
+			}))
+		break;
+	}
+}
+
+const sendToSocket = (data, client) => {
+	client.send(JSON.parse(data))
 }
