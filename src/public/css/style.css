@@ -1,0 +1,135 @@
+:root {
+    --title-color: blue;
+    --title-font: 'Courier New', Courier, monospace;
+
+    --main-background-color: #180600;
+
+    --classic-section-border-color: blue;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-background-color);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--title-font);
+}
+
+/*#region COMMON DESIGN */
+
+v-separator-1 {
+    height: 1%;
+}
+v-separator-5 {
+    height: 5%;
+}
+v-separator-10 {
+    height: 10%;
+}
+v-separator-25 {
+    height: 25%;
+}
+
+h-separator-1 {
+    width: 1%;
+}
+h-separator-5 {
+    width: 5%;
+}
+h-separator-10 {
+    width: 10%;
+}
+h-separator-25 {
+    width: 25%;
+}
+
+
+.classic-section {
+    background-color: black;
+    color:white;
+    border: 3px solid var(--classic-section-border-color);
+    border-radius: 5px;
+    padding: 5px
+}
+
+.classic-title {
+    color: var(--title-color);
+    width: 100%;
+    text-align: center;
+}
+
+.h-section-container {
+    width: 98%;
+    margin: 1%, 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.floating-left-section {
+    position: fixed;
+    left: 0;
+    background-color: black;
+}
+
+/* #endregion */
+
+/* #region HEADER */
+
+header {
+    width: 85%;
+    height: fit-content;
+    margin-bottom:3%;
+    display:flex;
+    justify-content: space-between;
+    background-color: black;
+    border: 3px solid blue;
+    border-radius: 0px 0px 5px 5px;
+    border-top:none;
+}
+header h1 {
+    width: fit-content;
+    color:var(--title-color);
+    margin-left: 10px;
+}
+
+header h4 {
+    color:gray;
+}
+.general-informations-container {
+    width: 80%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* #endregion */
+
+/* #region PLAYER LIST */
+
+.player-list-container {
+    width: 15%;
+    top:10%;
+    height: 80%;
+    border: 3px solid var(--classic-section-border-color);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+/* #endregion */

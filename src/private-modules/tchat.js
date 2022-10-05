@@ -3,8 +3,8 @@ import {WebSocketServer} from "ws";
 
 //#region Public funcs
 let server = {
-    port: NaN,
-    sockets: [NaN],
+    port: null,
+    sockets: [],
 }
 
 
@@ -20,7 +20,11 @@ export const Close = () => {
 }
 
 
-
+export const Start = () => {
+    server.ws.on("connection", (client) => {
+        client.sendFile("./src/public/index.html")
+    })
+}
 
 /*
 SERVER
