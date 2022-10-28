@@ -1,11 +1,18 @@
 :root {
-    --main-background-color: #03001d;
-    --main-background-color-secondary: #04002c;
+    --main-background-color: #202020;
+    --main-background-color-secondary: #070057;
+
+    --main-text-color: rgb(126, 103, 0);
+    --title-color-secondary: rgb(83, 68, 0);
+    --title-color: rgb(255, 208, 0);
+
+    --title-font: 'Courier New', Courier, monospace;
 }
 
 *{
-    padding: 0;
+    padding: 0; 
     margin: 0;
+    width: fit-content
 }
 
 html, body {
@@ -14,57 +21,36 @@ html, body {
     background-color: var(--main-background-color);
 }
 
-main{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 h1, h2, h3, h4, h5 {
     font-family: var(--title-font);
 }
 
-.auth-form {
-    position:fixed;
-    left: calc(50% - 125px);
-    top: calc(30% - 200px);
-    width: 250px;
-    height: 400px;
-    padding: 10px;
-    box-shadow: 0px 0px 5px rgb(0, 0, 0);
-    border-radius: 10px;
-    margin: auto;
-    background-color: var(--main-background-color-secondary);
-    color: rgb(255, 255, 255);
-    transition:box-shadow 0.2s;
-}
-.auth-form:hover {
-    box-shadow: 0 0 15px black;
-    transition:box-shadow 0.2s;
-}
-.auth-form h1 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 40px;
-}
-.auth-form div {
-    width: 100%;
-    height: 60%;
-    display: flex;
-    flex-direction: column;
-}
-.auth-form div h3 {
-    margin: 20px 0 10px 0;
-    width: 100%;
-    text-align: center;
+h2{
+    font-size: larger;
 }
 
-.auth-form div input {
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 10px;
-    color: rgb(3, 3, 3);
-    padding: 5px;
+h3{
+    font-size: large;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.login-register-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-container, .register-container{
+    border: solid 1px;
+    border-radius: 25px;
+    padding: 25px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
 }

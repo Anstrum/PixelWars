@@ -1,23 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/client.js" type="module"></script>
-        <title>Local Chat</title>
-    </head>
-    <body>
-        <section class="auth-form">
-            <h1>Login</h1>
 
-            <div>
-                <h3>Username</h3>
-                <input type="text" maxlength="20">
-                <h3>Password</h3>
-                <input type="password" maxlength="25">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.2.0/dist/axentix.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axentix@2.2.0/dist/axentix.min.js"></script>
+    <script src="js/client.js" type="module"></script>
+    <title>Local Chat</title>
+</head>
+
+<body>
+    <main>
+        <section class="login-register-container">
+            <div class="login-container">
+                <div class="switcher">
+                    <div class="switcher-switch">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+                <div class="auth-form-login">
+                    <div>
+                        <h3>Username</h3>
+                        <input type="text" maxlength="20">
+                        <h3>Password</h3>
+                        <input type="password" maxlength="25">
+                    </div>
+                    <input type="submit" class="validate">
+                </div>
+            </div>
+            <div class="register-container">
+                <div class="switcher">
+                    <div class="switcher-switch">
+                        <h2>Register</h2>
+                    </div>
+                </div>
+                <div class="auth-form-register">
+                    <div class="input-container">
+                        <h3>Username</h3>
+                        <input type="text" maxlength="20">
+                        <h3>Password</h3>
+                        <input type="password" maxlength="25">
+                        <h3>Password confirmation</h3>
+                        <input type="password" maxlength="25">
+                    </div>
+                    <input type="submit" class="validate">
+                </div>
             </div>
         </section>
-    </body>
+    </main>
+</body>
+
 </html>
