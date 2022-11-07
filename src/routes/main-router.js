@@ -6,3 +6,4 @@ export const mainRouter = express.Router();
 
 mainRouter.get("/", mainController.homePage)
 mainRouter.get("/style.css", mainController.homePageCss)
+mainRouter.get("/client.js", mainController.homePageJs)
