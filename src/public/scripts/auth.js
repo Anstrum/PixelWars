@@ -52,6 +52,9 @@ function CheckFormData(username, password, passwordConfirmation) {
         } else if(password.length < 8) {
             errors += "Too short password.<br>"
         }
+        if(errors != "") {
+            ShowError( )
+        }
     } else {
 
     }
