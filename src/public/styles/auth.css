@@ -9,6 +9,34 @@
         box-shadow: 0 0 20px blue;
     }
 }
+@keyframes hide-form {
+    0% {
+        visibility: visible;
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
+    50% {
+        visibility: hidden;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    100% {
+        visibility: hidden;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+}
+@keyframes show-form {
+    0% {
+        visibility: hidden;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    50% {
+        visibility: hidden;
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    100% {
+        visibility: visible;
+        transform: rotate3d(0, 0, 0, 90deg);
+    }
+}
 
 
 :root {
@@ -44,8 +72,8 @@ h1, h2, h3, h4, h5 {
 
 
 .auth-form {
-    position:relative;
-    margin: auto;
+    position:fixed;
+    top: calc(50% - 225px);
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -59,21 +87,11 @@ h1, h2, h3, h4, h5 {
     animation: shadow-glow 3s infinite;
 }
 
-.form-swapper {
-    margin: 30px 10px;
-    display: flex;
-    width: 70%;
-    height: fit-content;
-    background-color: black;
-    border-radius: 25px;
-    border: 1px solid blue;
-}
 
-.form-swapper h3 {
-    background-color: gray;
+
+.auth-form h2 {
     width: 50%;
     padding: 10px;
-    border-radius: 25px 0 0 25px;
     text-align: center;
 }
 
@@ -106,7 +124,7 @@ h1, h2, h3, h4, h5 {
     transition: all 0.3s;
 }
 
-.auth-form .sendForm {
+.send-form {
     width: 50%;
     height:30px;
     border-radius: 8px;
@@ -115,6 +133,18 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 25px;
     padding: 3px 5px;
 }
-.auth-form .sendForm:hover {
+.send-form:hover {
     background-color: rgb(169, 169, 169);
+}
+
+#login-form {
+    visibility: hidden;
+}
+#switch-form {
+    color:red;
+    position:fixed;
+    bottom: 0;
+    margin-bottom: 50px;
+    max-width: 250px;
+    padding: 3px 3px;
 }

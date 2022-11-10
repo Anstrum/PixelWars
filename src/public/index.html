@@ -11,17 +11,24 @@
     <body>
         <h1 class="website-title">Pixel Wars</h1>
 
-        <section class="auth-form">
-            <div class="form-swapper">
-                <h3>Login</h3>
-                <h3>register</h3>
+        <div class="auth-form" id="register-form">
+            <h2>Register</h2>
+            <div class="form-content" id="register-form-content">
+                <input class="form-username" type="text" placeholder="Username">
+                <input class="form-password" type="password" placeholder="Password">
+                <input class="form-password-confirmation" type="password" placeholder="Confirm Password">
             </div>
-            <div class="form-content">
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
+                <input class="send-form" id="register-send-button" type="submit" value="Sing up">
+        </div>
+        <div class="auth-form" id="login-form">
+            <h2>Login</h2>
+            <div class="form-content" id="login-form-content">
+                <input class="form-username" type="text" placeholder="Username">
+                <input class="form-password" type="password" placeholder="Password">
             </div>
-                <input class="sendForm" type="submit" value="Sing in">
-        </section>
+                <input class="send-form" id="login-send-button" type="submit" value="Sing in">
+        </div>
+
+        <input class="send-form" id="switch-form" type="submit" value="Sing In instead">    
     </body>
 </html>
