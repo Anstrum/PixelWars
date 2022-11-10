@@ -13,18 +13,24 @@
 
         <div class="auth-form" id="register-form">
             <h2>Register</h2>
+            <label id="register-error-label"></label>
             <div class="form-content" id="register-form-content">
                 <input class="form-username" type="text" placeholder="Username">
+                <label>Case sensitive username<br>min 8 characters</label>
                 <input class="form-password" type="password" placeholder="Password">
+                <label>min 8 characters</label>
                 <input class="form-password-confirmation" type="password" placeholder="Confirm Password">
             </div>
                 <input class="send-form" id="register-send-button" type="submit" value="Sing up">
         </div>
         <div class="auth-form" id="login-form">
             <h2>Login</h2>
+            <label id="login-error-label"></label>
             <div class="form-content" id="login-form-content">
                 <input class="form-username" type="text" placeholder="Username">
+                <label>Case sensitive username<br>min 8 characters</label>
                 <input class="form-password" type="password" placeholder="Password">
+                <label>min 8 characters</label>
             </div>
                 <input class="send-form" id="login-send-button" type="submit" value="Sing in">
         </div>

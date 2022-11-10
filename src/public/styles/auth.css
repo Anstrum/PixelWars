@@ -48,7 +48,7 @@
     padding:0;
     width:fit-content;
     height: fit-content;
-    color:blue;
+    color:aqua;
 }
 
 html, body {
@@ -95,6 +95,14 @@ h1, h2, h3, h4, h5 {
     text-align: center;
 }
 
+#error-label {
+    margin-top: 10px;
+    font-size: medium;
+    color:red;
+    width: 100%;
+    text-align: center;
+}
+
 .form-content {
     display: flex;
     flex-direction: column;
@@ -107,8 +115,8 @@ h1, h2, h3, h4, h5 {
 
 .form-content input {
     width: 70%;
-    margin-bottom: 20px;
-    margin-top: 5px;
+    margin-top: 20px;
+    margin-bottom: 5px;
     text-align: center;
 
     background-color: transparent;
@@ -124,6 +132,13 @@ h1, h2, h3, h4, h5 {
     transition: all 0.3s;
 }
 
+.form-content label {
+    font-size: small;
+    width: 100%;
+    text-align: center;
+    color:cadetblue;
+}
+
 .send-form {
     width: 50%;
     height:30px;
@@ -137,9 +152,6 @@ h1, h2, h3, h4, h5 {
     background-color: rgb(169, 169, 169);
 }
 
-#login-form {
-    visibility: hidden;
-}
 #switch-form {
     color:red;
     position:fixed;

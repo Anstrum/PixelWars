@@ -10,6 +10,9 @@ let registerForm = document.getElementById("register-form")
 let swapForm = document.getElementById("switch-form")
     swapForm.addEventListener("click", SwitchForm)
 
+let loginErrorLabel = document.getElementById("login-error-label")
+let registerErrorLabel = document.getElementById("register-error-label")
+
 let loginSendButton = document.getElementById("login-send-button")
 let registerSendButton = document.getElementById("register-send-button")
 
@@ -19,20 +22,38 @@ registerSendButton.addEventListener("click", () => {AuthRequest(REGISTER_FORM)})
 
 
 function AuthRequest(form) {
+
+    let username = null
+    let password = null
+    let passwordConfirmation = null
+
     if(form == LOGIN_FORM)
     {
-        let username = document.querySelector(form + " .form-username").value
-        let password = document.querySelector(form + " .form-password").value
-
-        console.log(username, password)
+        username = document.querySelector(form + " .form-username").value
+        password = document.querySelector(form + " .form-password").value
     }
     if(form == REGISTER_FORM)
     {
-        let username = document.querySelector(form + " .form-username").value
-        let password = document.querySelector(form + " .form-password").value
-        let passwordConfirmation = document.querySelector(form + " .form-password-confirmation").value
+        username = document.querySelector(form + " .form-username").value
+        password = document.querySelector(form + " .form-password").value
+        passwordConfirmation = document.querySelector(form + " .form-password-confirmation").value
+        CheckFormData(username, password, passwordConfirmation)
+    }
+}
 
-        console.log(username, password, passwordConfirmation)
+function CheckFormData(username, password, passwordConfirmation) {
+    if(actualForm == REGISTER_FORM ) {
+        let errors = ""
+        if(username == "" || username.length < 8) {
+            errors += "Wrong username.<br>";
+        }
+        if(password == "") {
+            errors += "Empty password.<br>"
+        } else if(password.length < 8) {
+            errors += "Too short password.<br>"
+        }
+    } else {
+
     }
 }
 
@@ -62,4 +83,15 @@ function ClearForms() {
     document.querySelector(REGISTER_FORM + " .form-username").value = ""
     document.querySelector(REGISTER_FORM + " .form-password").value = ""
     document.querySelector(REGISTER_FORM + " .form-password-confirmation").value = ""
+}
+
+function ShowError(errors) {
+    if(actualForm == REGISTER_FORM)
+    {
+        loginErrorLabel.innerHTML = errors
+        loginErrorLabel.style.visibility = visible
+    } else {
+        registerErrorLabel.innerHTML = errors
+        registerErrorLabel.style.visibility = visible
+    }
 }
