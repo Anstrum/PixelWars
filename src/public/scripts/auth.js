@@ -15,9 +15,8 @@ let registerErrorLabel = document.getElementById("register-error-label")
 
 let loginSendButton = document.getElementById("login-send-button")
 let registerSendButton = document.getElementById("register-send-button")
-
-loginSendButton.addEventListener("click", () => {AuthRequest(LOGIN_FORM)})
-registerSendButton.addEventListener("click", () => {AuthRequest(REGISTER_FORM)})
+    loginSendButton.addEventListener("click", () => {AuthRequest(LOGIN_FORM)})
+    registerSendButton.addEventListener("click", () => {AuthRequest(REGISTER_FORM)})
 
 
 
@@ -31,6 +30,7 @@ function AuthRequest(form) {
     {
         username = document.querySelector(form + " .form-username").value
         password = document.querySelector(form + " .form-password").value
+        CheckFormData(username, password)
     }
     if(form == REGISTER_FORM)
     {
@@ -53,10 +53,25 @@ function CheckFormData(username, password, passwordConfirmation) {
             errors += "Too short password.<br>"
         }
         if(errors != "") {
-            ShowError( )
+            ShowError(errors)
+        } else {
+
         }
     } else {
+        let errors = ""
+        if(username == "" || username.length < 8) {
+            errors += "impossible username.<br>";
+        }
+        if(password == "") {
+            errors += "Empty password.<br>"
+        } else if(password.length < 8) {
+            errors += "Too short password.<br>"
+        }
+        if(errors != "") {
+            ShowError(errors)
+        } else {
 
+        }
     }
 }
 
@@ -86,15 +101,20 @@ function ClearForms() {
     document.querySelector(REGISTER_FORM + " .form-username").value = ""
     document.querySelector(REGISTER_FORM + " .form-password").value = ""
     document.querySelector(REGISTER_FORM + " .form-password-confirmation").value = ""
+
+    document.querySelector("#login-error-label").innerHTML = "";
+    document.querySelector("#login-error-label").style.visibility = "hidden";
+    document.querySelector("#register-error-label").innerHTML = "";
+    document.querySelector("#register-error-label").style.visibility = "hidden";
 }
 
 function ShowError(errors) {
     if(actualForm == REGISTER_FORM)
     {
-        loginErrorLabel.innerHTML = errors
-        loginErrorLabel.style.visibility = visible
-    } else {
         registerErrorLabel.innerHTML = errors
-        registerErrorLabel.style.visibility = visible
+        registerErrorLabel.style.visibility = "visible"
+    } else {
+        loginErrorLabel.innerHTML = errors
+        loginErrorLabel.style.visibility = "visible"
     }
 }

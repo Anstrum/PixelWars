@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5 {
     border:1px solid blue;
     margin-bottom: 25px;
     padding: 3px 5px;
+    color:black
 }
 .send-form:hover {
     background-color: rgb(169, 169, 169);
